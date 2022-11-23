@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "小松之家 • All posts by \"毒鸡汤\" tag",
+    "description": "玫瑰花不敢有花期,日落不愿归潮汐.",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2022/11/22/My-New-Post/",
+            "url": "http://example.com/2022/11/22/My-New-Post/",
+            "title": "生活苦不苦,只有自己知道",
+            "date_published": "2022-11-22T07:23:06.000Z",
+            "content_html": "<p>晚风吹人醒，万事藏于心。我没说不公平，也没说苦，我说我知道了。</p>\n<h2 id=\"生活不易对自己好点\"><a class=\"markdownIt-Anchor\" href=\"#生活不易对自己好点\">#</a> 生活不易，对自己好点.</h2>\n<pre><code class=\"language-命运\">哪有什么宿命,我们走过的路才叫命运,而命运掌握在我们自己手中.\n</code></pre>\n<pre><code class=\"language-知足常乐\">苏格拉底曾说:“知足是天然的财富，欲望是人为的贫穷。”\n</code></pre>\n<pre><code class=\"language-怎敢呢\">一贫如洗怎敢如繁华,两袖清风怎敢误佳人\n</code></pre>\n<pre><code class=\"language-图片\">![这里是 alt](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &quot;这里是 title&quot;)\n</code></pre>\n<pre><code class=\"language-图片大小\">![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &quot;定义图片大小 - 固定宽度和高度&quot;)&#123;height=&quot;100px&quot; width=&quot;400px&quot;&#125;\n\n![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &quot;定义图片大小 - 固定宽度&quot;)&#123;width=&quot;400px&quot;&#125;\n\n![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &quot;定义图片大小 - 固定高度&quot;)&#123;height=&quot;100px&quot;&#125;\n</code></pre>\n",
+            "tags": [
+                "毒鸡汤"
+            ]
+        }
+    ]
+}
