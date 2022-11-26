@@ -1,0 +1,527 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="逆转未来" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="逆转未来" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="逆转未来" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="JavaScript,前端开发,正则" />
+
+
+<link rel="canonical" href="http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/">
+
+
+
+  <title>
+正则 - JavaScript - 前端开发笔记 |
+Rain-Hreats = 逆转未来 = 知足是天然的财富，欲望是人为的贫穷</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">正则
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-11-26 18:12:56">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-11-26T18:12:56+08:00">2022-11-26</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.2k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Rain-Hreats</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Development-ntoe/" itemprop="item" rel="index" title="分类于 前端开发笔记"><span itemprop="name">前端开发笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Development-ntoe/JavaScript/" itemprop="item" rel="index" title="分类于 JavaScript"><span itemprop="name">JavaScript</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="RainHreats">
+    <meta itemprop="description" content="知足是天然的财富，欲望是人为的贫穷, 学习笔记 & 生活琐碎">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逆转未来">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div class="note info">
+<p>以下是平时开发中会比较常用的正则</p>
+</div>
+<h2 id="手机号码的校验"><a class="markdownIt-Anchor" href="#手机号码的校验">#</a> 手机号码的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> phoneReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token number">1</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">9</span><span class="token punctuation">&#125;</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="身份证的校验"><a class="markdownIt-Anchor" href="#身份证的校验">#</a> 身份证的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> sfzReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span>\d<span class="token punctuation">&#123;</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token operator">|</span><span class="token number">19</span><span class="token operator">|</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">]</span>\d<span class="token punctuation">)</span><span class="token punctuation">)</span>\d<span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">|</span><span class="token number">11</span><span class="token operator">|</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token number">10</span><span class="token operator">|</span><span class="token number">20</span><span class="token operator">|</span><span class="token number">30</span><span class="token operator">|</span><span class="token number">31</span><span class="token punctuation">)</span>\d<span class="token punctuation">&#123;</span><span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span>Xx<span class="token punctuation">]</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="邮箱的校验"><a class="markdownIt-Anchor" href="#邮箱的校验">#</a> 邮箱的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> emailReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Za</span><span class="token operator">-</span>z0<span class="token operator">-</span><span class="token number">9_</span>\<span class="token operator">-</span>\<span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>\@<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Za</span><span class="token operator">-</span>z0<span class="token operator">-</span><span class="token number">9_</span>\<span class="token operator">-</span>\<span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Za</span><span class="token operator">-</span>z<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="url的校验"><a class="markdownIt-Anchor" href="#url的校验">#</a> URL 的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> urlReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span><span class="token punctuation">(</span>https<span class="token operator">?</span><span class="token operator">|</span>ftp<span class="token operator">|</span>file<span class="token punctuation">)</span><span class="token operator">:</span>\<span class="token operator">/</span>\<span class="token operator">/</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">(</span><span class="token punctuation">[</span>\da<span class="token operator">-</span>z\<span class="token punctuation">.</span>-<span class="token punctuation">]</span><span class="token operator">+</span><span class="token punctuation">)</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token operator">-</span>z\<span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">[</span>\<span class="token operator">/</span>\w \<span class="token punctuation">.</span>-<span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">*</span>\<span class="token operator">/</span><span class="token operator">?</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="ipv4的校验"><a class="markdownIt-Anchor" href="#ipv4的校验">#</a> IPv4 的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> ipv4Reg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">:</span><span class="token number">25</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">|</span><span class="token number">2</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span><span class="token number">01</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">)</span>\<span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">:</span><span class="token number">25</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">|</span><span class="token number">2</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span><span class="token number">01</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">)</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="16进制颜色的校验"><a class="markdownIt-Anchor" href="#16进制颜色的校验">#</a> 16 进制颜色的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> color16Reg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span>#<span class="token operator">?</span><span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token operator">-</span>fA<span class="token operator">-</span><span class="token constant">F0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token operator">|</span><span class="token punctuation">[</span>a<span class="token operator">-</span>fA<span class="token operator">-</span><span class="token constant">F0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="日期-yyyy-mm-dd"><a class="markdownIt-Anchor" href="#日期-yyyy-mm-dd">#</a> 日期 YYYY-MM-DD</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> dateReg1 <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">(</span>\<span class="token operator">-</span><span class="token punctuation">)</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span>\<span class="token number">1</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="日期-yyyy-mm-dd-hhmmss"><a class="markdownIt-Anchor" href="#日期-yyyy-mm-dd-hhmmss">#</a> 日期 YYYY-MM-DD hh:mm:ss</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> dateReg2 <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token operator">|</span>\<span class="token operator">/</span><span class="token punctuation">)</span><span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>\<span class="token function">2</span><span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span>\d<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="整数的校验"><a class="markdownIt-Anchor" href="#整数的校验">#</a> 整数的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> intReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token operator">+</span><span class="token punctuation">]</span><span class="token operator">?</span>\d<span class="token operator">*</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="小数的校验"><a class="markdownIt-Anchor" href="#小数的校验">#</a> 小数的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> floatReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span><span class="token operator">-</span>\<span class="token operator">+</span><span class="token punctuation">]</span><span class="token operator">?</span>\d<span class="token operator">+</span><span class="token punctuation">(</span>\<span class="token punctuation">.</span>\d<span class="token operator">+</span><span class="token punctuation">)</span><span class="token operator">?</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="保留n位小数"><a class="markdownIt-Anchor" href="#保留n位小数">#</a> 保留 n 位小数</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>function <span class="token function">checkFloat</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>`<span class="token operator">^</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token punctuation">[</span>\d<span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span>$<span class="token punctuation">&#123;</span>n<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">)</span>$`<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h2 id="邮政编号的校验"><a class="markdownIt-Anchor" href="#邮政编号的校验">#</a> 邮政编号的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> postalNoReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span>\d<span class="token punctuation">&#123;</span><span class="token number">6</span><span class="token punctuation">&#125;</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="qq号的校验-5-11位数字"><a class="markdownIt-Anchor" href="#qq号的校验-5-11位数字">#</a> QQ 号的校验 (5-11 位数字)</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> qqReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">&#125;</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="微信号的校验-6至20位以字母开头字母数字减号下划线"><a class="markdownIt-Anchor" href="#微信号的校验-6至20位以字母开头字母数字减号下划线">#</a> 微信号的校验 (6 至 20 位，以字母开头，字母，数字，减号，下划线)</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> wxReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span><span class="token class-name">Z</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span>_a<span class="token operator">-</span>zA<span class="token operator">-</span><span class="token constant">Z0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">+</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="车牌号的校验"><a class="markdownIt-Anchor" href="#车牌号的校验">#</a> 车牌号的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> carNoReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span>京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领<span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Z</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Z</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token constant">Z0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token constant">Z0</span><span class="token operator">-</span><span class="token number">9</span>挂学警港澳<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="只含字母的字符串"><a class="markdownIt-Anchor" href="#只含字母的字符串">#</a> 只含字母的字符串</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> letterReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span><span class="token class-name">Z</span><span class="token punctuation">]</span><span class="token operator">+</span>$<span class="token operator">/</span></pre></td></tr></table></figure><h2 id="包含中文的字符串"><a class="markdownIt-Anchor" href="#包含中文的字符串">#</a> 包含中文的字符串</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> cnReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token punctuation">[</span>\u4E00<span class="token operator">-</span>\u9FA5<span class="token punctuation">]</span><span class="token operator">/</span></pre></td></tr></table></figure><h2 id="密码强度的校验-密码中必须包含字母-数字-特称字符至少8个字符最多30个字符"><a class="markdownIt-Anchor" href="#密码强度的校验-密码中必须包含字母-数字-特称字符至少8个字符最多30个字符">#</a> 密码强度的校验 (密码中必须包含字母、数字、特称字符，至少 8 个字符，最多 30 个字符)</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> passwordReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">=</span><span class="token punctuation">.</span>*<span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">=</span><span class="token punctuation">.</span>*<span class="token punctuation">[</span>a<span class="token operator">-</span>zA<span class="token operator">-</span><span class="token class-name">Z</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">=</span><span class="token punctuation">.</span>*<span class="token punctuation">[</span><span class="token operator">^</span>a<span class="token operator">-</span>zA<span class="token operator">-</span><span class="token constant">Z0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">&#123;</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">&#125;</span><span class="token operator">/</span></pre></td></tr></table></figure><h2 id="字符串长度n的校验"><a class="markdownIt-Anchor" href="#字符串长度n的校验">#</a> 字符串长度 n 的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>function <span class="token function">checkStrLength</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>`<span class="token operator">^</span><span class="token punctuation">.</span><span class="token punctuation">&#123;</span>$<span class="token punctuation">&#123;</span>n<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>$`<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h2 id="文件拓展名的校验"><a class="markdownIt-Anchor" href="#文件拓展名的校验">#</a> 文件拓展名的校验</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>function <span class="token function">checkFileName</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  arr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>name <span class="token operator">=</span><span class="token operator">></span> `<span class="token punctuation">.</span>$<span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span>`<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token char">'|'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>`<span class="token punctuation">(</span>$<span class="token punctuation">&#123;</span>arr<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>$`<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h2 id="匹配img和src-imgregexec"><a class="markdownIt-Anchor" href="#匹配img和src-imgregexec">#</a> 匹配 img 和 src (imgReg.exec (…))</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> imgReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">&lt;</span>img<span class="token punctuation">.</span>*<span class="token operator">?</span>src<span class="token operator">=</span><span class="token punctuation">[</span>\"<span class="token operator">|</span>\'<span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">(</span><span class="token punctuation">.</span>*<span class="token operator">?</span><span class="token punctuation">)</span><span class="token punctuation">[</span>\"<span class="token operator">|</span>\'<span class="token punctuation">]</span><span class="token operator">?</span>\s<span class="token punctuation">.</span>*<span class="token operator">?</span><span class="token operator">></span><span class="token operator">/</span>ig</pre></td></tr></table></figure><h2 id="匹配html中的注释-noteregexec"><a class="markdownIt-Anchor" href="#匹配html中的注释-noteregexec">#</a> 匹配 html 中的注释  (noteReg.exec (…))</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> noteReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token punctuation">(</span><span class="token punctuation">.</span>*<span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator">--</span><span class="token operator">></span><span class="token operator">/</span>g</pre></td></tr></table></figure><h2 id="匹配html中的style-styleregexec"><a class="markdownIt-Anchor" href="#匹配html中的style-styleregexec">#</a> 匹配 html 中的 style  (styleReg.exec ())</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> styleReg <span class="token operator">=</span> <span class="token operator">/</span>style<span class="token operator">=</span><span class="token string">"[^=>]*"</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>\s<span class="token operator">+</span>\w<span class="token operator">+=</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span>g</pre></td></tr></table></figure><h2 id="匹配html中的颜色-colorregexec"><a class="markdownIt-Anchor" href="#匹配html中的颜色-colorregexec">#</a> 匹配 html 中的颜色  (colorReg.exec ())</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> colorReg <span class="token operator">=</span> <span class="token operator">/</span>#<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Fa</span><span class="token operator">-</span>f0<span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token operator">|</span><span class="token punctuation">[</span><span class="token class-name">A</span><span class="token operator">-</span><span class="token class-name">Fa</span><span class="token operator">-</span>f0<span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">/</span>g</pre></td></tr></table></figure><h2 id="匹配htmltaghtml标签-endregexec"><a class="markdownIt-Anchor" href="#匹配htmltaghtml标签-endregexec">#</a> 匹配 htmlTag（html 标签） (endReg.exec ())</h2>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">const</span> endReg <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token string">"[^"</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token string">"|'[^']*'|[^'"</span><span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">/</span>g</pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/JavaScript/" rel="tag"><i class="ic i-tag"></i> JavaScript</a>
+          <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> 前端开发</a>
+          <a href="/tags/%E6%AD%A3%E5%88%99/" rel="tag"><i class="ic i-tag"></i> 正则</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-11-26 18:39:34" itemprop="dateModified" datetime="2022-11-26T18:39:34+08:00">2022-11-26</time>
+  </span>
+  <span id="2022/11/26/Development-ntoe/JavaScript/regular/" class="item leancloud_visitors" data-flag-title="正则" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="RainHreats 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="RainHreats 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="RainHreats 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>RainHreats <i class="ic i-at"><em>@</em></i>逆转未来
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/" title="正则">http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/11/26/Development-ntoe/JavaScript/JavaScript%E6%96%B9%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexw3o58j20zk0m8e81.jpg" title="JavaScript方法">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> JavaScript</span>
+  <h3>JavaScript方法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text"> 手机号码的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AF%81%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.</span> <span class="toc-text"> 身份证的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%AE%E7%AE%B1%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text"> 邮箱的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#url%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> URL 的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv4%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">5.</span> <span class="toc-text"> IPv4 的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">6.</span> <span class="toc-text"> 16 进制颜色的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-yyyy-mm-dd"><span class="toc-number">7.</span> <span class="toc-text"> 日期 YYYY-MM-DD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-yyyy-mm-dd-hhmmss"><span class="toc-number">8.</span> <span class="toc-text"> 日期 YYYY-MM-DD hh:mm:ss</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">9.</span> <span class="toc-text"> 整数的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">10.</span> <span class="toc-text"> 小数的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E7%95%99n%E4%BD%8D%E5%B0%8F%E6%95%B0"><span class="toc-number">11.</span> <span class="toc-text"> 保留 n 位小数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%AE%E6%94%BF%E7%BC%96%E5%8F%B7%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">12.</span> <span class="toc-text"> 邮政编号的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qq%E5%8F%B7%E7%9A%84%E6%A0%A1%E9%AA%8C-5-11%E4%BD%8D%E6%95%B0%E5%AD%97"><span class="toc-number">13.</span> <span class="toc-text"> QQ 号的校验 (5-11 位数字)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%A0%A1%E9%AA%8C-6%E8%87%B320%E4%BD%8D%E4%BB%A5%E5%AD%97%E6%AF%8D%E5%BC%80%E5%A4%B4%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E5%87%8F%E5%8F%B7%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="toc-number">14.</span> <span class="toc-text"> 微信号的校验 (6 至 20 位，以字母开头，字母，数字，减号，下划线)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%A6%E7%89%8C%E5%8F%B7%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">15.</span> <span class="toc-text"> 车牌号的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E5%90%AB%E5%AD%97%E6%AF%8D%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">16.</span> <span class="toc-text"> 只含字母的字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">17.</span> <span class="toc-text"> 包含中文的字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%BC%BA%E5%BA%A6%E7%9A%84%E6%A0%A1%E9%AA%8C-%E5%AF%86%E7%A0%81%E4%B8%AD%E5%BF%85%E9%A1%BB%E5%8C%85%E5%90%AB%E5%AD%97%E6%AF%8D-%E6%95%B0%E5%AD%97-%E7%89%B9%E7%A7%B0%E5%AD%97%E7%AC%A6%E8%87%B3%E5%B0%918%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%9C%80%E5%A4%9A30%E4%B8%AA%E5%AD%97%E7%AC%A6"><span class="toc-number">18.</span> <span class="toc-text"> 密码强度的校验 (密码中必须包含字母、数字、特称字符，至少 8 个字符，最多 30 个字符)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6n%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">19.</span> <span class="toc-text"> 字符串长度 n 的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95%E5%90%8D%E7%9A%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">20.</span> <span class="toc-text"> 文件拓展名的校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8Dimg%E5%92%8Csrc-imgregexec"><span class="toc-number">21.</span> <span class="toc-text"> 匹配 img 和 src (imgReg.exec (…))</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8Dhtml%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A-noteregexec"><span class="toc-number">22.</span> <span class="toc-text"> 匹配 html 中的注释  (noteReg.exec (…))</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8Dhtml%E4%B8%AD%E7%9A%84style-styleregexec"><span class="toc-number">23.</span> <span class="toc-text"> 匹配 html 中的 style  (styleReg.exec ())</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8Dhtml%E4%B8%AD%E7%9A%84%E9%A2%9C%E8%89%B2-colorregexec"><span class="toc-number">24.</span> <span class="toc-text"> 匹配 html 中的颜色  (colorReg.exec ())</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8Dhtmltaghtml%E6%A0%87%E7%AD%BE-endregexec"><span class="toc-number">25.</span> <span class="toc-text"> 匹配 htmlTag（html 标签） (endReg.exec ())</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/11/26/Development-ntoe/JavaScript/JavaScript%E6%96%B9%E6%B3%95/" rel="bookmark" title="JavaScript方法">JavaScript方法</a></li><li class="active"><a href="/2022/11/26/Development-ntoe/JavaScript/regular/" rel="bookmark" title="正则">正则</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="RainHreats"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">RainHreats</p>
+  <div class="description" itemprop="description">学习笔记 & 生活琐碎</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">4</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JhaW4tSHJlYXJ0" title="https:&#x2F;&#x2F;github.com&#x2F;Rain-Hreart"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTUwMjM2MTMyMw==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;502361323"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Chicken-soup/" title="分类于 生活语录">生活语录</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Chicken-soup/Copy-day/" title="分类于 每日文案">每日文案</a>
+</div>
+
+    <span><a href="/2022/11/26/Chicken-soup/Copy-day/%E7%94%9F%E6%B4%BB%E8%AF%AD%E5%8F%A5/" title="生活苦不苦,只有自己知道">生活苦不苦,只有自己知道</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/11/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Development-ntoe/" title="分类于 前端开发笔记">前端开发笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Development-ntoe/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/2022/11/26/Development-ntoe/JavaScript/regular/" title="正则">正则</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Development-ntoe/" title="分类于 前端开发笔记">前端开发笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Development-ntoe/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/2022/11/26/Development-ntoe/JavaScript/JavaScript%E6%96%B9%E6%B3%95/" title="JavaScript方法">JavaScript方法</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">RainHreats @ Rain-Hreats</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">6k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/11/26/Development-ntoe/JavaScript/regular/',
+    favicon: {
+      show: "憧憬未来",
+      hide: "重温过去"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

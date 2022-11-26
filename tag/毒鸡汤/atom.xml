@@ -1,33 +1,49 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>小松之家 • Posts by &#34;毒鸡汤&#34; tag</title>
+    <title>逆转未来 • Posts by &#34;毒鸡汤&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2022-11-22T07:23:06.000Z</updated>
-    <category term="测试笔记" />
+    <updated>2022-11-26T06:28:13.000Z</updated>
     <category term="毒鸡汤" />
+    <category term="JavaScript" />
+    <category term="前端开发" />
+    <category term="JS方法" />
+    <category term="正则" />
     <entry>
-        <id>http://example.com/2022/11/22/My-New-Post/</id>
+        <id>http://example.com/2022/11/26/Chicken-soup/Copy-day/%E7%94%9F%E6%B4%BB%E8%AF%AD%E5%8F%A5/</id>
         <title>生活苦不苦,只有自己知道</title>
-        <link rel="alternate" href="http://example.com/2022/11/22/My-New-Post/"/>
-        <content type="html">&lt;p&gt;晚风吹人醒，万事藏于心。我没说不公平，也没说苦，我说我知道了。&lt;/p&gt;
-&lt;h2 id=&#34;生活不易对自己好点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#生活不易对自己好点&#34;&gt;#&lt;/a&gt; 生活不易，对自己好点.&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-命运&#34;&gt;哪有什么宿命,我们走过的路才叫命运,而命运掌握在我们自己手中.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-知足常乐&#34;&gt;苏格拉底曾说:“知足是天然的财富，欲望是人为的贫穷。”
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-怎敢呢&#34;&gt;一贫如洗怎敢如繁华,两袖清风怎敢误佳人
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-图片&#34;&gt;![这里是 alt](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &amp;quot;这里是 title&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-图片大小&#34;&gt;![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &amp;quot;定义图片大小 - 固定宽度和高度&amp;quot;)&amp;#123;height=&amp;quot;100px&amp;quot; width=&amp;quot;400px&amp;quot;&amp;#125;
-
-![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &amp;quot;定义图片大小 - 固定宽度&amp;quot;)&amp;#123;width=&amp;quot;400px&amp;quot;&amp;#125;
-
-![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &amp;quot;定义图片大小 - 固定高度&amp;quot;)&amp;#123;height=&amp;quot;100px&amp;quot;&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+        <link rel="alternate" href="http://example.com/2022/11/26/Chicken-soup/Copy-day/%E7%94%9F%E6%B4%BB%E8%AF%AD%E5%8F%A5/"/>
+        <content type="html">&lt;p&gt;&lt;span class=&#34;label danger&#34;&gt;💔一贫如洗怎敢如繁华，两袖清风怎敢误佳人&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;今日文案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#今日文案&#34;&gt;#&lt;/a&gt; 💌  今日文案&lt;/h1&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;是路人，就好好路过。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;像失望和委屈这种东西没必要解释&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;遇见是故事的开端，错过是宿命的缺憾。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;人们所谓的遗憾，追根到底，还是不甘。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;人们所谓的遗憾，追根到底，还是不甘。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;晚风吹人醒，万事藏于心。我没说不公平，也没说苦，我说我知道了。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;你觉得我是一个怎样的人，取决于你的觉得，你带着有色眼镜看我，我做的再好，你都会觉不行。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;哪有什么宿命，我们走过的路才叫命运，而命运掌握在我们自己手中.&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;orange&#34;&gt;苏格拉底曾说:“知足是天然的财富，欲望是人为的贫穷。”&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
 </content>
         <category term="毒鸡汤" />
-        <updated>2022-11-22T07:23:06.000Z</updated>
+        <updated>2022-11-26T06:28:13.000Z</updated>
     </entry>
 </feed>
