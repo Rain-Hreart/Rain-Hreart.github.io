@@ -8,16 +8,17 @@
         <pubDate>Sat, 26 Nov 2022 18:12:56 +0800</pubDate>
         <lastBuildDate>Sat, 26 Nov 2022 18:12:56 +0800</lastBuildDate>
         <category>毒鸡汤</category>
-        <category>JavaScript</category>
         <category>前端开发</category>
-        <category>JS方法</category>
+        <category>JavaScript</category>
+        <category>CSS</category>
         <category>正则</category>
+        <category>JS方法</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/</guid>
             <title>正则</title>
             <link>http://example.com/2022/11/26/Development-ntoe/JavaScript/regular/</link>
-            <category>JavaScript</category>
             <category>前端开发</category>
+            <category>JavaScript</category>
             <category>正则</category>
             <pubDate>Sat, 26 Nov 2022 18:12:56 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
@@ -54,8 +55,8 @@
             <guid isPermalink="true">http://example.com/2022/11/26/Development-ntoe/JavaScript/JavaScript%E6%96%B9%E6%B3%95/</guid>
             <title>JavaScript方法</title>
             <link>http://example.com/2022/11/26/Development-ntoe/JavaScript/JavaScript%E6%96%B9%E6%B3%95/</link>
-            <category>JavaScript</category>
             <category>前端开发</category>
+            <category>JavaScript</category>
             <category>JS方法</category>
             <pubDate>Sat, 26 Nov 2022 17:13:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;javascript方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript方法&#34;&gt;#&lt;/a&gt; 💻 JavaScript 方法&lt;/h1&gt;
