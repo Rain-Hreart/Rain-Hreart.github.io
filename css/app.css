@@ -73,7 +73,6 @@
   --header-text-color: var(--grey-0);
   --primary-color: var(--color-red);
   --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
-  --tags-background: #edf0f7;
 }
 .primary {
   --note-border: #cda0c7;
@@ -137,7 +136,6 @@
   --box-bg-shadow: #000;
   --text-color: var(--grey-5);
   --header-text-color: var(--grey-9);
-  --tags-background: #30343f;
 }
 [data-theme="dark"] .primary {
   --note-border: rgba(123,96,119,0.8);
@@ -797,7 +795,6 @@ details[open] > div,
   animation: fadeOut 0.3s;
 }
 .up-down,
-#angle i,
 .code-container .show-btn .ic {
   animation: UpDown 2s infinite;
 }
@@ -1516,40 +1513,12 @@ main >.inner {
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   text-shadow: 0rem 0.2rem 0.3rem rgba(0,0,0,0.5);
   color: var(--header-text-color);
 }
-#header::before {
-  background: url("https://cdn.jsdelivr.net/gh/lavender816/CDN@1.8/img/dot.jpg");
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -4;
-  background-attachment: fixed;
-}
 #header a:hover {
   color: currentColor;
-}
-#angle {
-  position: absolute;
-  bottom: 10vh;
-  left: 50%;
-  cursor: pointer;
-  z-index: 5;
-  transform: translateX(-50%);
-}
-@media (max-width: 860px) {
-  #angle {
-    bottom: 8vh;
-  }
-}
-#angle i {
-  font-size: 35px;
-  color: #fff;
 }
 #imgs {
   display: block;
@@ -1557,7 +1526,7 @@ main >.inner {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   min-height: 25rem;
   z-index: -9;
   background-color: #363636;
@@ -1816,7 +1785,7 @@ main >.inner {
   padding: 3rem 5rem 0;
   text-align: center;
   width: 100%;
-  height: 80vh;
+  height: 50vh;
   min-height: 10rem;
 }
 #brand.affix {
@@ -1883,7 +1852,7 @@ main >.inner {
 #tool {
   position: fixed;
   left: 1rem;
-  top: 90vh;
+  top: 50vh;
   z-index: 9;
 }
 @media (max-width: 991px) {
@@ -2031,8 +2000,7 @@ main >.inner {
   margin-bottom: -0.6875rem;
   min-height: 3.125rem;
   max-height: 9.375rem;
-  position: absolute;
-  z-index: 4;
+  position: relative;
 }
 @media (max-width: 767px) {
   .waves {
@@ -3558,15 +3526,9 @@ main >.inner {
 .tag.cloud a {
   display: inline-block;
   margin: 0.625rem;
-  background: var(--tags-background);
-  padding: 0.3em 0.5em;
-  border-radius: 10px;
-  box-shadow: 0px 7px 23px rgba(0,0,0,0.2);
 }
 .tag.cloud a:hover {
-  color: var(--grey-3) !important;
-  transform: scale(1.25, 1.25);
-  background: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 .page .notfound {
   width: 18.75rem;

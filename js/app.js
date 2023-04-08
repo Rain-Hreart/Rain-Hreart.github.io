@@ -1,4 +1,4 @@
-var CONFIG = {"version":"0.2.5","hostname":"http://example.com","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_dark":{"enable":true,"start":21,"end":6},"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":false,"switch":false},"search":{"appID":"8L1149J0YD","apiKey":"06b23e4e6621cff9e778d926aceb0479","indexName":"RainHreart_seach","hits":{"per_page":10}},"valine":{"appId":"BXLj8LFH3WHKxRyQ6GkpR6qs-gzGzoHsz","appKey":"G64iJAztwEKbxUrxsSxnt7U8","placeholder":"ヽ(○´∀`)ﾉ♪","avatar":"mp","pageSize":10,"lang":"zh-CN","visitor":true,"NoRecordIP":false,"serverURLs":"https://bxlj8lfh.lc-cn-n1-shared.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"主人","friend":"小伙伴","investor":"金主粑粑"},"tagColor":{"master":"#a77c59","friend":"#855194","investor":"#ed6ea0"},"tagMember":{"master":null,"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":[{"title":"列表1","list":["https://music.163.com/#/playlist?id=2201380795"]},{"title":"列表2","list":["https://music.163.com/#/playlist?id=2031842656"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
+var CONFIG = {"version":"0.2.5","hostname":"http://example.com","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":false,"switch":false},"search":{"appID":"8L1149J0YD","apiKey":"06b23e4e6621cff9e778d926aceb0479","indexName":"RainHreart_seach","hits":{"per_page":10}},"valine":{"appId":"BXLj8LFH3WHKxRyQ6GkpR6qs-gzGzoHsz","appKey":"G64iJAztwEKbxUrxsSxnt7U8","placeholder":"ヽ(○´∀`)ﾉ♪","avatar":"mp","pageSize":10,"lang":"zh-CN","visitor":true,"NoRecordIP":false,"serverURLs":"https://bxlj8lfh.lc-cn-n1-shared.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"主人","friend":"小伙伴","investor":"金主粑粑"},"tagColor":{"master":"#a77c59","friend":"#855194","investor":"#ed6ea0"},"tagMember":{"master":null,"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":[{"title":"列表1","list":["https://music.163.com/#/playlist?id=2943811283","https://music.163.com/#/playlist?id=2297706586"]},{"title":"列表2","list":["https://music.163.com/#/playlist?id=2031842656"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -1123,10 +1123,6 @@ const sideBar = $('#sidebar');
 const siteBrand = $('#brand');
 var toolBtn = $('#tool'),
     toolPlayer, backToTop, goToComment, showContents;
-
-var imgMover = $('#imgs'); // 新增
-var angleBtn = $('#angle'); // 新增
-
 var siteSearch = $('#search');
 var siteNavHeight, headerHightInner, headerHight;
 var oWinHeight = window.innerHeight;
@@ -1301,17 +1297,6 @@ const scrollHandle = function(event) {
     var SHOW = window.pageYOffset > headerHightInner;
     var startScroll = window.pageYOffset > 0;
 
-    var oVal = Math.round(Math.min(300 * window.pageYOffset / contentVisibilityHeight, 100)) / -5;
-    var max = 200 + window.pageYOffset;
-    if (oVal > max) {
-        oVal = max;
-    }
-    imgMover.style.transform = 'translate3d(0,' + oVal + 'vh,0)';
-    imgMover.style.webkitTransform = 'translate3d(0,' + oVal + 'vh,0)';
-    imgMover.style.msTransform = 'translate3d(0,' + oVal + 'vh,0)';
-    imgMover.style.OTransform = 'translate3d(0,' + oVal + 'vh,0)';
-
-
     if (SHOW) {
         changeMetaTheme('#FFF');
     } else {
@@ -1410,16 +1395,6 @@ const clipBoard = function(str, callback) {
         selection.addRange(selected);
     }
     BODY.removeChild(ta);
-}
-
-const autoDarkmode = function() {
-    if (CONFIG.auto_dark.enable) {
-        if (new Date().getHours() >= CONFIG.auto_dark.start || new Date().getHours() <= CONFIG.auto_dark.end) {
-            changeTheme('dark');
-        } else {
-            changeTheme();
-        }
-    }
 }const sideBarToggleHandle = function(event, force) {
     if (sideBar.hasClass('on')) {
         sideBar.removeClass('on');
@@ -1639,10 +1614,6 @@ const goToBottomHandle = function() {
 
 const goToCommentHandle = function() {
     pageScroll($('#comments'));
-}
-
-const headertopdown = function() {
-    pageScroll($('#main'));
 }
 
 const menuActive = function() {
@@ -2237,14 +2208,6 @@ const domInit = function() {
         });
     }
 
-    if (!angleBtn) {
-        angleBtn = siteHeader.createChild('div', {
-            id: 'angle',
-            innerHTML: '<span><i class="ic i-angle-down" aria-hidden="true"></i></span>'
-        });
-    }
-    angleBtn.addEventListener('click', headertopdown);
-
     toolPlayer = toolBtn.child('.player');
     backToTop = toolBtn.child('.back-to-top');
     goToComment = toolBtn.child('.chat');
@@ -2278,8 +2241,6 @@ const pjaxReload = function() {
 const siteRefresh = function(reload) {
     LOCAL_HASH = 0
     LOCAL_URL = window.location.href
-
-    imgMover = $('#imgs')
 
     vendorCss('katex');
     vendorJs('copy_tex');
@@ -2348,8 +2309,6 @@ const siteInit = function() {
 
     CONFIG.quicklink.ignores = LOCAL.ignores
     quicklink.listen(CONFIG.quicklink)
-
-    autoDarkmode() // 新增
 
     visibilityListener()
     themeColorListener()
