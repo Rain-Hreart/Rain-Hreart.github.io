@@ -8,17 +8,17 @@
         <pubDate>Thu, 01 Dec 2022 22:50:56 +0800</pubDate>
         <lastBuildDate>Thu, 01 Dec 2022 22:50:56 +0800</lastBuildDate>
         <category>毒鸡汤</category>
-        <category>前端开发</category>
         <category>JavaScript</category>
-        <category>CSS</category>
-        <category>正则</category>
+        <category>前端开发</category>
         <category>JS方法</category>
+        <category>正则</category>
+        <category>CSS</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/12/01/Development-ntoe/Other/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0/</guid>
             <title>全站变灰</title>
             <link>http://example.com/2022/12/01/Development-ntoe/Other/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0/</link>
-            <category>前端开发</category>
             <category>JavaScript</category>
+            <category>前端开发</category>
             <category>CSS</category>
             <pubDate>Thu, 01 Dec 2022 22:50:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;我们在特殊时候需要把全站变灰&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#我们在特殊时候需要把全站变灰&#34;&gt;#&lt;/a&gt; 我们在&lt;span class=&#34;label&#34;&gt;特殊时候&lt;/span&gt;需要把全站变灰。&lt;/h1&gt;

@@ -2362,9 +2362,6 @@ main >.inner {
 .contents .current>a:hover {
   color: var(--primary-color);
 }
-.markdownIt-Anchor {
-  display: none;
-}
 .related {
   font-size: 0.875em;
 }
